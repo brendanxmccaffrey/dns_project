@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="History and purpose of the Domain Name System.">
+  <title>History & Purpose of DNS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header small-header">
+    <div class="container">
+      <h1>History & Purpose of DNS</h1>
+      <p class="subtitle">How DNS replaced the older HOSTS file model and became foundational internet infrastructure.</p>
+    </div>
+  </header>
+
+  <nav class="main-nav">
+    <div class="container nav-flex">
+      <a href="index.html">Home</a>
+      <a href="history.html">History & Purpose</a>
+      <a href="how-dns-works.html">How DNS Works</a>
+      <a href="key-concepts.html">Key Concepts</a>
+      <a href="references.html">References</a>
+      <a href="about.html">About</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="card">
+      <h2>The Role and Purpose of DNS</h2>
+      <p>DNS exists because humans and computers communicate differently. Computers route traffic using IP addresses, while people prefer readable names such as website addresses. DNS bridges that gap by mapping domain names to IP addresses so browsers and applications can find the correct destination.</p>
+      <p>Without DNS, users would need to remember numerical addresses instead of simple names. DNS makes the internet significantly easier to use and also supports scalability, redundancy, and performance through distributed control and caching.</p>
+    </section>
+
+    <section class="grid-layout two-col">
+      <article class="card">
+        <h2>Before DNS</h2>
+        <p>Before DNS, computers relied on a centralized text file called the <strong>HOSTS file</strong>. This file stored hostname-to-IP mappings and had to be manually updated and distributed. That process became difficult and unreliable as the internet expanded.</p>
+        <ul>
+          <li>Manual updates were required for new hosts</li>
+          <li>Conflicts became more common</li>
+          <li>The model created a bottleneck and single point of failure</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Why DNS Was Introduced</h2>
+        <p>DNS was introduced in the early 1980s by Paul Mockapetris to replace the static HOSTS file model with a dynamic, distributed, and hierarchical system. Instead of relying on one central list, DNS delegated responsibility across multiple levels and allowed organizations to manage their own parts of the namespace.</p>
+      </article>
+    </section>
+
+    <section class="card">
+      <h2>Historical Timeline</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Period</th>
+            <th>Development</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Early Internet</td>
+            <td>HOSTS files were used to map names to IP addresses</td>
+          </tr>
+          <tr>
+            <td>Early 1980s</td>
+            <td>DNS was designed to support automation, scale, and delegation</td>
+          </tr>
+          <tr>
+            <td>1983</td>
+            <td>RFC 882 documented early DNS concepts</td>
+          </tr>
+          <tr>
+            <td>1987</td>
+            <td>RFC 1034 and RFC 1035 refined the DNS standards</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Why DNS Remains Important</h2>
+      <p>DNS is now part of the internet's critical infrastructure. Its reliability affects communication, commerce, and access to digital services around the world. Even though it works mostly behind the scenes, nearly every web request depends on successful name resolution.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>This is a class project for IT 3203. Visit the course website: <a href="https://ksuweb.github.io/IT3203/" target="_blank" rel="noopener noreferrer">IT 3203 Class Website</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>

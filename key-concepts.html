@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Key DNS concepts explained in simple language.">
+  <title>Key DNS Concepts</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header small-header">
+    <div class="container">
+      <h1>Key DNS Concepts</h1>
+      <p class="subtitle">Important ideas needed to understand the Domain Name System.</p>
+    </div>
+  </header>
+
+  <nav class="main-nav">
+    <div class="container nav-flex">
+      <a href="index.html">Home</a>
+      <a href="history.html">History & Purpose</a>
+      <a href="how-dns-works.html">How DNS Works</a>
+      <a href="key-concepts.html">Key Concepts</a>
+      <a href="references.html">References</a>
+      <a href="about.html">About</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="grid-layout">
+      <article class="card concept-card">
+        <h2>1. Domain Name System (DNS)</h2>
+        <p>DNS is the system that translates human-friendly domain names into machine-readable IP addresses so users can reach websites and services on the internet.</p>
+      </article>
+
+      <article class="card concept-card">
+        <h2>2. IP Address</h2>
+        <p>An IP address is the numerical network address used by computers to route traffic and identify a destination on the internet.</p>
+      </article>
+
+      <article class="card concept-card">
+        <h2>3. Recursive Resolver</h2>
+        <p>A recursive resolver receives a DNS request from a client and performs the lookup process if the answer is not already cached.</p>
+      </article>
+
+      <article class="card concept-card">
+        <h2>4. Authoritative Name Server</h2>
+        <p>An authoritative server stores the official DNS records for a domain and provides the final answer when that domain is queried.</p>
+      </article>
+
+      <article class="card concept-card">
+        <h2>5. Time to Live (TTL)</h2>
+        <p>TTL is the value that determines how long a DNS response may be cached before it should be refreshed from an authoritative source.</p>
+      </article>
+
+      <article class="card concept-card">
+        <h2>6. DNSSEC</h2>
+        <p>DNSSEC is a set of security extensions that helps verify DNS responses are authentic and have not been altered in transit.</p>
+      </article>
+
+      <article class="card concept-card">
+        <h2>7. DoH and DoT</h2>
+        <p>DNS over HTTPS and DNS over TLS are privacy-focused protocols that encrypt DNS traffic between the client and resolver.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>This is a class project for IT 3203. Visit the course website: <a href="https://ksuweb.github.io/IT3203/" target="_blank" rel="noopener noreferrer">IT 3203 Class Website</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>

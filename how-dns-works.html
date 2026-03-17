@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="How DNS works, plus DNS security and privacy concepts.">
+  <title>How DNS Works</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header small-header">
+    <div class="container">
+      <h1>How DNS Works</h1>
+      <p class="subtitle">A look at DNS hierarchy, resolution, caching, security, and privacy.</p>
+    </div>
+  </header>
+
+  <nav class="main-nav">
+    <div class="container nav-flex">
+      <a href="index.html">Home</a>
+      <a href="history.html">History & Purpose</a>
+      <a href="how-dns-works.html">How DNS Works</a>
+      <a href="key-concepts.html">Key Concepts</a>
+      <a href="references.html">References</a>
+      <a href="about.html">About</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="card">
+      <h2>DNS Is Hierarchical and Distributed</h2>
+      <p>There is no single master database that contains every DNS record on the internet. DNS is a hierarchical and distributed system. Responsibility is delegated across multiple levels, which allows different organizations to manage different portions of the namespace.</p>
+      <p>Although users often think of <strong>.com</strong> as the highest level, domain names technically end with an invisible trailing dot that represents the root domain. From there, queries move through root servers, top-level domain servers, and then authoritative name servers.</p>
+    </section>
+
+    <section class="card">
+      <h2>Basic DNS Resolution Process</h2>
+      <ol>
+        <li>A client needs to resolve a domain name.</li>
+        <li>The client sends the request to a recursive resolver.</li>
+        <li>If the answer is not already cached, the resolver checks the root servers.</li>
+        <li>The resolver is directed to the correct top-level domain server.</li>
+        <li>The resolver then asks the authoritative server for the domain.</li>
+        <li>The IP address is returned to the client.</li>
+      </ol>
+    </section>
+
+    <section class="grid-layout two-col">
+      <article class="card">
+        <h2>Caching and TTL</h2>
+        <p>DNS uses caching to improve speed and reduce repeated queries. Each response includes a <strong>Time to Live (TTL)</strong> value, which tells systems how long they may keep that information in cache. Caching reduces load on authoritative servers and helps DNS scale to extremely high request volumes.</p>
+      </article>
+
+      <article class="card">
+        <h2>Performance and Resilience</h2>
+        <p>Modern DNS infrastructure uses techniques such as geographic distribution, anycast routing, health checks, and automated failover. These design choices improve availability, performance, and resilience across the internet.</p>
+      </article>
+    </section>
+
+    <section class="card">
+      <h2>Security Challenges</h2>
+      <p>DNS was not originally designed with strong security protections. As a result, it faces important risks such as spoofing, cache poisoning, and amplification-based DDoS attacks.</p>
+      <ul>
+        <li><strong>DNS spoofing / cache poisoning:</strong> false DNS records are inserted into a cache</li>
+        <li><strong>DDoS amplification:</strong> attackers abuse misconfigured servers to increase traffic against a target</li>
+        <li><strong>Operational risk:</strong> outages at major DNS providers can affect many websites and services</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Security and Privacy Improvements</h2>
+      <p><strong>DNSSEC</strong> adds cryptographic signatures that help resolvers verify DNS responses have not been tampered with. However, DNSSEC does not encrypt DNS data.</p>
+      <p>Privacy-focused protocols such as <strong>DNS over HTTPS (DoH)</strong> and <strong>DNS over TLS (DoT)</strong> encrypt DNS traffic between clients and resolvers. These technologies improve privacy but also create tradeoffs related to visibility, control, and centralization.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>This is a class project for IT 3203. Visit the course website: <a href="https://ksuweb.github.io/IT3203/" target="_blank" rel="noopener noreferrer">IT 3203 Class Website</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>
