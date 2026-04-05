@@ -258,3 +258,24 @@ th {
 .highlight-incorrect {
   outline: 2px solid red;
 }
+
+.question-result {
+  border: 1px solid #ccc;
+  padding: 12px;
+  margin-top: 12px;
+  border-radius: 6px;
+}
+
+.question-result.correct {
+  background-color: #eaf7ea;
+  border-color: #4caf50;
+}
+
+.question-result.incorrect {
+  background-color: #fdecec;
+  border-color: #d9534f;
+}
+
+.feedback {
+  display: none;
+}
