@@ -164,3 +164,97 @@ th {
     grid-template-columns: 1fr;
   }
 }
+
+/* Milestone 2 quiz styles */
+.quiz-form fieldset {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.quiz-form legend {
+  font-weight: bold;
+  color: var(--primary);
+  padding: 0 0.35rem;
+}
+
+.quiz-form label {
+  display: block;
+  margin: 0.45rem 0;
+}
+
+.quiz-form input[type="text"] {
+  width: min(100%, 420px);
+  padding: 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.button-row button {
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  background: var(--secondary);
+  color: #fff;
+}
+
+.button-row button:hover {
+  background: var(--primary);
+}
+
+.results-box {
+  display: none;
+}
+
+.results-box.show {
+  display: block;
+}
+
+.pass-text {
+  color: #0b6b2c;
+  font-weight: bold;
+}
+
+.fail-text {
+  color: #a11d2a;
+  font-weight: bold;
+}
+
+.correct-answer {
+  color: #0b6b2c;
+}
+
+.incorrect-answer {
+  color: #a11d2a;
+}
+
+.feedback {
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+.correct {
+  color: green;
+}
+
+.incorrect {
+  color: red;
+}
+
+.highlight-correct {
+  outline: 2px solid green;
+}
+
+.highlight-incorrect {
+  outline: 2px solid red;
+}
