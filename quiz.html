@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  
+  <!-- Page header -->
   <header class="site-header small-header">
     <div class="container">
       <h1>DNS Self Assessment Quiz</h1>
@@ -15,18 +17,22 @@
     </div>
   </header>
 
+  
+  <!-- Main navigation -->
   <nav class="main-nav">
     <div class="container nav-flex">
       <a href="index.html">Home</a>
       <a href="history.html">History &amp; Purpose</a>
       <a href="how-dns-works.html">How DNS Works</a>
       <a href="key-concepts.html">Key Concepts</a>
-      <a href="quiz.html">Quiz</a>
+      <a href="quiz.html" class="active">Quiz</a>
       <a href="references.html">References</a>
       <a href="about.html">About</a>
     </div>
   </nav>
 
+  
+  <!-- Main content -->
   <main class="container">
     <section class="card">
       <h2>Instructions</h2>
@@ -85,7 +91,6 @@
 
         <div class="button-row">
           <button type="submit">Submit Quiz</button>
-          <button type="reset" id="resetButton">Retake Quiz</button>
         </div>
       </form>
     </section>
@@ -95,9 +100,15 @@
       <p id="overallResult"></p>
       <p id="totalScore"></p>
       <div id="questionResults"></div>
+
+      <div class="button-row">
+        <button type="reset" id="resetButton">Retake Quiz</button>
+      </div>
     </section>
   </main>
 
+  
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
       <p>This is a class project for IT 3203. Visit the course website: <a href="https://ksuweb.github.io/IT3203/" target="_blank" rel="noopener noreferrer">IT 3203 Class Website</a>.</p>

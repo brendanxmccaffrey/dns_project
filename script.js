@@ -1,10 +1,16 @@
+// Brendan McCaffrey - IT 3203 Milestone 2
+// Handles quiz submission, grading, and results display
+
+// Wait for the page to load before attaching event listeners
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("dnsQuiz");
   const resetButton = document.getElementById("resetButton");
 
+  // Handle quiz submission
   form.addEventListener("submit", function (event) {
     event.preventDefault();
 
+    // Warn user if questions are unanswered
     if (!allQuestionsAnswered()) {
       const confirmSubmit = confirm(
         "You have unanswered questions. Do you want to submit anyway?"
@@ -17,215 +23,87 @@ document.addEventListener("DOMContentLoaded", function () {
     gradeQuiz();
   });
 
+  // Handle quiz reset
   resetButton.addEventListener("click", function () {
     setTimeout(resetQuizUI, 0);
   });
 });
 
+// Main grading logic for the quiz
 function gradeQuiz() {
   let score = 0;
   const totalQuestions = 5;
   const questionDetails = [];
 
-  clearFeedback();
-
-  // Question 1
-  const q1 = document.getElementById("q1");
-  const q1Feedback = document.getElementById("q1-feedback");
-  const q1Answer = q1.value.trim().toLowerCase();
+  // Question 1 (fill in the blank)
+  const q1 = document.getElementById("q1").value.trim().toLowerCase();
   const q1CorrectAnswer = "Domain Name System";
 
   if (
-    q1Answer === "domain name system" ||
-    q1Answer === "the domain name system"
+    q1 === "domain name system" ||
+    q1 === "the domain name system"
   ) {
     score++;
-    q1Feedback.textContent = "Correct";
-    q1Feedback.className = "feedback correct";
-    q1.classList.add("highlight-correct");
-    questionDetails.push({
-      question: 1,
-      points: "1/1",
-      result: "Correct",
-      answer: q1CorrectAnswer
-    });
+    questionDetails.push({ question: 1, points: "1/1", result: "Correct", answer: q1CorrectAnswer });
   } else {
-    q1Feedback.textContent = "Incorrect. Correct answer: Domain Name System";
-    q1Feedback.className = "feedback incorrect";
-    q1.classList.add("highlight-incorrect");
-    questionDetails.push({
-      question: 1,
-      points: "0/1",
-      result: "Incorrect",
-      answer: q1CorrectAnswer
-    });
+    questionDetails.push({ question: 1, points: "0/1", result: "Incorrect", answer: q1CorrectAnswer });
   }
 
-  // Question 2
-  const q2Feedback = document.getElementById("q2-feedback");
-  const q2Options = document.getElementsByName("q2");
-  let q2Selected = null;
+  // Question 2 (multiple choice)
+  const q2Selected = document.querySelector('input[name="q2"]:checked')?.value;
   const q2CorrectValue = "b";
   const q2CorrectAnswer = "IP addresses";
 
-  q2Options.forEach((option) => {
-    const label = option.parentElement;
-    if (option.checked) {
-      q2Selected = option.value;
-      label.classList.add("selected-answer");
-    }
-    if (option.value === q2CorrectValue) {
-      label.classList.add("correct-answer");
-    }
-  });
-
   if (q2Selected === q2CorrectValue) {
     score++;
-    q2Feedback.textContent = "Correct";
-    q2Feedback.className = "feedback correct";
-    questionDetails.push({
-      question: 2,
-      points: "1/1",
-      result: "Correct",
-      answer: q2CorrectAnswer
-    });
+    questionDetails.push({ question: 2, points: "1/1", result: "Correct", answer: q2CorrectAnswer });
   } else {
-    q2Feedback.textContent = "Incorrect. Correct answer: IP addresses";
-    q2Feedback.className = "feedback incorrect";
-    questionDetails.push({
-      question: 2,
-      points: "0/1",
-      result: "Incorrect",
-      answer: q2CorrectAnswer
-    });
+    questionDetails.push({ question: 2, points: "0/1", result: "Incorrect", answer: q2CorrectAnswer });
   }
 
   // Question 3
-  const q3Feedback = document.getElementById("q3-feedback");
-  const q3Options = document.getElementsByName("q3");
-  let q3Selected = null;
+  const q3Selected = document.querySelector('input[name="q3"]:checked')?.value;
   const q3CorrectValue = "c";
   const q3CorrectAnswer = "Authoritative name server";
 
-  q3Options.forEach((option) => {
-    const label = option.parentElement;
-    if (option.checked) {
-      q3Selected = option.value;
-      label.classList.add("selected-answer");
-    }
-    if (option.value === q3CorrectValue) {
-      label.classList.add("correct-answer");
-    }
-  });
-
   if (q3Selected === q3CorrectValue) {
     score++;
-    q3Feedback.textContent = "Correct";
-    q3Feedback.className = "feedback correct";
-    questionDetails.push({
-      question: 3,
-      points: "1/1",
-      result: "Correct",
-      answer: q3CorrectAnswer
-    });
+    questionDetails.push({ question: 3, points: "1/1", result: "Correct", answer: q3CorrectAnswer });
   } else {
-    q3Feedback.textContent =
-      "Incorrect. Correct answer: Authoritative name server";
-    q3Feedback.className = "feedback incorrect";
-    questionDetails.push({
-      question: 3,
-      points: "0/1",
-      result: "Incorrect",
-      answer: q3CorrectAnswer
-    });
+    questionDetails.push({ question: 3, points: "0/1", result: "Incorrect", answer: q3CorrectAnswer });
   }
 
   // Question 4
-  const q4Feedback = document.getElementById("q4-feedback");
-  const q4Options = document.getElementsByName("q4");
-  let q4Selected = null;
+  const q4Selected = document.querySelector('input[name="q4"]:checked')?.value;
   const q4CorrectValue = "a";
   const q4CorrectAnswer = "How long data can stay cached";
 
-  q4Options.forEach((option) => {
-    const label = option.parentElement;
-    if (option.checked) {
-      q4Selected = option.value;
-      label.classList.add("selected-answer");
-    }
-    if (option.value === q4CorrectValue) {
-      label.classList.add("correct-answer");
-    }
-  });
-
   if (q4Selected === q4CorrectValue) {
     score++;
-    q4Feedback.textContent = "Correct";
-    q4Feedback.className = "feedback correct";
-    questionDetails.push({
-      question: 4,
-      points: "1/1",
-      result: "Correct",
-      answer: q4CorrectAnswer
-    });
+    questionDetails.push({ question: 4, points: "1/1", result: "Correct", answer: q4CorrectAnswer });
   } else {
-    q4Feedback.textContent =
-      "Incorrect. Correct answer: How long data can stay cached";
-    q4Feedback.className = "feedback incorrect";
-    questionDetails.push({
-      question: 4,
-      points: "0/1",
-      result: "Incorrect",
-      answer: q4CorrectAnswer
-    });
+    questionDetails.push({ question: 4, points: "0/1", result: "Incorrect", answer: q4CorrectAnswer });
   }
 
-  // Question 5
-  const q5Feedback = document.getElementById("q5-feedback");
+  // Question 5 (multi-select)
   const q5Checked = Array.from(
     document.querySelectorAll('input[name="q5"]:checked')
-  )
-    .map((option) => option.value)
-    .sort();
+  ).map((option) => option.value).sort();
 
   const q5Correct = ["dnssec", "doh", "dot"].sort();
   const q5CorrectAnswer = "DNSSEC, DNS over HTTPS (DoH), and DNS over TLS (DoT)";
 
-  document.querySelectorAll('input[name="q5"]').forEach((option) => {
-    const label = option.parentElement;
-    if (option.checked) {
-      label.classList.add("selected-answer");
-    }
-    if (q5Correct.includes(option.value)) {
-      label.classList.add("correct-answer");
-    }
-  });
-
   if (arraysEqual(q5Checked, q5Correct)) {
     score++;
-    q5Feedback.textContent = "Correct";
-    q5Feedback.className = "feedback correct";
-    questionDetails.push({
-      question: 5,
-      points: "1/1",
-      result: "Correct",
-      answer: q5CorrectAnswer
-    });
+    questionDetails.push({ question: 5, points: "1/1", result: "Correct", answer: q5CorrectAnswer });
   } else {
-    q5Feedback.textContent =
-      "Incorrect. Correct answers: DNSSEC, DNS over HTTPS (DoH), and DNS over TLS (DoT)";
-    q5Feedback.className = "feedback incorrect";
-    questionDetails.push({
-      question: 5,
-      points: "0/1",
-      result: "Incorrect",
-      answer: q5CorrectAnswer
-    });
+    questionDetails.push({ question: 5, points: "0/1", result: "Incorrect", answer: q5CorrectAnswer });
   }
 
   showResults(score, totalQuestions, questionDetails);
 }
 
+// Display results
 function showResults(score, totalQuestions, questionDetails) {
   const overallResult = document.getElementById("overallResult");
   const totalScore = document.getElementById("totalScore");
@@ -234,17 +112,16 @@ function showResults(score, totalQuestions, questionDetails) {
 
   const passed = score >= 3;
 
-  overallResult.textContent = passed
-    ? "Overall Result: Pass"
-    : "Overall Result: Fail";
+  overallResult.textContent = passed ? "Overall Result: Pass" : "Overall Result: Fail";
   overallResult.className = passed ? "correct" : "incorrect";
 
-  totalScore.textContent = "Total Score: " + score + " out of " + totalQuestions;
+  totalScore.textContent = `Total Score: ${score} out of ${totalQuestions}`;
   totalScore.className = passed ? "correct" : "incorrect";
 
+  // Build detailed results for each question
   questionResults.innerHTML = "";
 
-  questionDetails.forEach(function (item) {
+  questionDetails.forEach((item) => {
     const resultClass = item.result === "Correct" ? "correct" : "incorrect";
 
     questionResults.innerHTML += `
@@ -258,63 +135,36 @@ function showResults(score, totalQuestions, questionDetails) {
   });
 
   resultsBox.style.display = "block";
+  resultsBox.scrollIntoView({ behavior: "smooth" });
 }
 
+// Reset UI
 function resetQuizUI() {
-  clearFeedback();
+  // Reset all quiz inputs
+  document.getElementById("dnsQuiz").reset();
+
+  // Clear results
   document.getElementById("overallResult").textContent = "";
-  document.getElementById("overallResult").className = "";
   document.getElementById("totalScore").textContent = "";
-  document.getElementById("totalScore").className = "";
   document.getElementById("questionResults").innerHTML = "";
+  document.getElementById("results").style.display = "none";
+  
+  // Scroll back to top
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-function clearFeedback() {
-  document.querySelectorAll(".feedback").forEach((item) => {
-    item.textContent = "";
-    item.className = "feedback";
-  });
-
-  document
-    .querySelectorAll(
-      ".highlight-correct, .highlight-incorrect, .selected-answer, .correct-answer"
-    )
-    .forEach((item) => {
-      item.classList.remove(
-        "highlight-correct",
-        "highlight-incorrect",
-        "selected-answer",
-        "correct-answer"
-      );
-    });
-}
-
+// Check that all questions have input
 function allQuestionsAnswered() {
-  const q1 = document.getElementById("q1").value.trim();
-  const q2 = document.querySelector('input[name="q2"]:checked');
-  const q3 = document.querySelector('input[name="q3"]:checked');
-  const q4 = document.querySelector('input[name="q4"]:checked');
-  const q5 = document.querySelector('input[name="q5"]:checked');
-
-  if (q1 === "") return false;
-  if (!q2) return false;
-  if (!q3) return false;
-  if (!q4) return false;
-  if (!q5) return false;
-
-  return true;
+  return (
+    document.getElementById("q1").value.trim() !== "" &&
+    document.querySelector('input[name="q2"]:checked') &&
+    document.querySelector('input[name="q3"]:checked') &&
+    document.querySelector('input[name="q4"]:checked') &&
+    document.querySelector('input[name="q5"]:checked')
+  );
 }
 
+// Utility function for comparing arrays
 function arraysEqual(arr1, arr2) {
-  if (arr1.length !== arr2.length) {
-    return false;
-  }
-
-  for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) {
-      return false;
-    }
-  }
-
-  return true;
+  return arr1.length === arr2.length && arr1.every((val, i) => val === arr2[i]);
 }

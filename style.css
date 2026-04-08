@@ -1,5 +1,5 @@
-/* Brendan McCaffrey - IT 3203 Milestone 1 */
-/* Single stylesheet for the entire DNS website */
+/* Brendan McCaffrey - IT 3203 Milestone 2 */
+/* Stylesheet for the DNS website */
 
 :root {
   --bg: #f4f7fb;
@@ -11,7 +11,7 @@
   --text: #1f2933;
 }
 
-/* Element selector example */
+/* Base page styles */
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -34,12 +34,13 @@ img {
   background: #fff;
 }
 
-/* Class selector example */
+/* Layout container */
 .container {
   width: min(1100px, 92%);
   margin: 0 auto;
 }
 
+/* Header styles */
 .site-header {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: #fff;
@@ -67,6 +68,7 @@ img {
   max-width: 800px;
 }
 
+/* Navigation styles */
 .main-nav {
   background: #0f2235;
   border-bottom: 3px solid #091420;
@@ -93,6 +95,15 @@ a:hover {
   color: #fff;
 }
 
+.main-nav a.active {
+  background-color: #1a73e8;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Card and layout styles */
 .card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -131,6 +142,7 @@ a:hover {
   margin-bottom: 0.6rem;
 }
 
+/* Table styles */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -148,16 +160,18 @@ th {
   background: var(--accent);
 }
 
+/* Footer styles */
 .site-footer {
   margin-top: 2rem;
   padding: 1.5rem 0 2.5rem;
 }
 
-/* ID selector example */
+/* Homepage title width */
 #site-title {
   max-width: 850px;
 }
 
+/* Responsive layout */
 @media (max-width: 800px) {
   .hero,
   .two-col {
@@ -192,6 +206,7 @@ th {
   font-size: 1rem;
 }
 
+/* Button styles */
 .button-row {
   display: flex;
   flex-wrap: wrap;
@@ -212,35 +227,9 @@ th {
   background: var(--primary);
 }
 
+/* Quiz results styles */
 .results-box {
   display: none;
-}
-
-.results-box.show {
-  display: block;
-}
-
-.pass-text {
-  color: #0b6b2c;
-  font-weight: bold;
-}
-
-.fail-text {
-  color: #a11d2a;
-  font-weight: bold;
-}
-
-.correct-answer {
-  color: #0b6b2c;
-}
-
-.incorrect-answer {
-  color: #a11d2a;
-}
-
-.feedback {
-  margin-top: 8px;
-  font-weight: bold;
 }
 
 .correct {
@@ -251,31 +240,30 @@ th {
   color: red;
 }
 
-.highlight-correct {
-  outline: 2px solid green;
+#overallResult {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
 }
 
-.highlight-incorrect {
-  outline: 2px solid red;
+#totalScore {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
 }
 
 .question-result {
-  border: 1px solid #ccc;
+  margin-bottom: 15px;
   padding: 12px;
-  margin-top: 12px;
   border-radius: 6px;
 }
 
 .question-result.correct {
-  background-color: #eaf7ea;
-  border-color: #4caf50;
+  border: 2px solid #2e7d32;
+  background-color: #e8f5e9;
+  color: #2e7d32;
 }
 
 .question-result.incorrect {
-  background-color: #fdecec;
-  border-color: #d9534f;
-}
-
-.feedback {
-  display: none;
+  border: 2px solid #c62828;
+  background-color: #fdecea;
+  color: #c62828;
 }
