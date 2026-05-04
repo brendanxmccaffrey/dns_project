@@ -7,8 +7,8 @@
   <title>Key DNS Concepts</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  
   <!-- Page header -->
   <header class="site-header small-header">
     <div class="container">
@@ -17,12 +17,11 @@
     </div>
   </header>
 
-  
   <!-- Main navigation -->
   <nav class="main-nav">
     <div class="container nav-flex">
       <a href="index.html">Home</a>
-      <a href="history.html">History & Purpose</a>
+      <a href="history.html">History &amp; Purpose</a>
       <a href="how-dns-works.html">How DNS Works</a>
       <a href="key-concepts.html" class="active">Key Concepts</a>
       <a href="quiz.html">Quiz</a>
@@ -31,63 +30,124 @@
     </div>
   </nav>
 
-  
   <!-- Main content -->
   <main class="container">
+    <section class="card">
+      <h2>Core DNS Concepts</h2>
+      <p>
+        Understanding DNS requires more than knowing that it translates names into IP addresses.
+        The concepts below explain the main parts of DNS and why each one matters.
+      </p>
+    </section>
+
     <section class="grid-layout">
       <article class="card concept-card">
         <h2>1. Domain Name System (DNS)</h2>
-        <p>DNS is the system that translates human-friendly domain names into machine-readable IP addresses so users can reach websites and services on the internet.</p>
+        <p>
+          DNS is the system that translates human-friendly domain names into machine-readable
+          IP addresses so users can reach websites and services on the internet.
+        </p>
       </article>
 
       <article class="card concept-card">
-        <h2>2. IP Address</h2>
-        <p>An IP address is the numerical network address used by computers to route traffic and identify a destination on the internet.</p>
+        <h2>2. Domain Name</h2>
+        <p>
+          A domain name is the human-readable address used to access a website, such as
+          <strong>example.com</strong>. Domain names are easier for people to remember than
+          numeric IP addresses.
+        </p>
       </article>
 
       <article class="card concept-card">
-        <h2>3. Recursive Resolver</h2>
-        <p>A recursive resolver receives a DNS request from a client and performs the lookup process if the answer is not already cached.</p>
+        <h2>3. IP Address</h2>
+        <p>
+          An IP address is the numeric address computers use to locate and communicate with each
+          other on a network. IPv4 addresses look like <strong>192.0.2.1</strong>, while IPv6
+          addresses are longer, such as <strong>2001:db8::1</strong>.
+        </p>
       </article>
 
       <article class="card concept-card">
-        <h2>4. Authoritative Name Server</h2>
-        <p>An authoritative server stores the official DNS records for a domain and provides the final answer when that domain is queried.</p>
+        <h2>4. Recursive Resolver</h2>
+        <p>
+          A recursive resolver receives DNS questions from a user’s device and does the work of
+          finding the answer. It may check cached results first, then query other DNS servers
+          until it finds the correct IP address.
+        </p>
       </article>
 
       <article class="card concept-card">
-        <h2>5. Time to Live (TTL)</h2>
-        <p>TTL is the value that determines how long a DNS response may be cached before it should be refreshed from an authoritative source.</p>
+        <h2>5. Root Servers</h2>
+        <p>
+          Root servers are the starting point of DNS resolution. They direct queries to the
+          appropriate top-level domain servers, such as servers for <strong>.com</strong>,
+          <strong>.org</strong>, or <strong>.net</strong>.
+        </p>
       </article>
 
       <article class="card concept-card">
-        <h2>6. DNSSEC</h2>
-        <p>DNSSEC is a set of security extensions that helps verify DNS responses are authentic and have not been altered in transit.</p>
+        <h2>6. Authoritative Name Server</h2>
+        <p>
+          An authoritative name server stores the official DNS records for a domain. When a
+          resolver needs the final answer for a domain, the authoritative server provides the
+          correct record.
+        </p>
       </article>
 
       <article class="card concept-card">
-        <h2>7. DoH and DoT</h2>
-        <p>DNS over HTTPS and DNS over TLS are privacy-focused protocols that encrypt DNS traffic between the client and resolver.</p>
-      </article>
-
-      <!-- Additional concept cards for Milestone 2 -->
-      <article class="card concept-card">
-        <h2>8. DNS Records</h2>
-        <p>DNS records are entries in a DNS database that define how a domain name behaves, including where it points and what services it supports.</p>
+        <h2>7. DNS Records</h2>
+        <p>
+          DNS records are entries in a DNS database that define how a domain name behaves,
+          including where it points and what services it supports, such as websites, email,
+          and verification records.
+        </p>
       </article>
 
       <article class="card concept-card">
-        <h2>9. Root Servers</h2>
-        <p>Root servers are the starting point of DNS resolution. They direct queries to the appropriate top-level domain servers.</p>
+        <h2>8. DNS Caching</h2>
+        <p>
+          DNS caching stores previous lookup results temporarily. Caching improves performance
+          because the browser, operating system, or resolver can reuse a recent answer instead
+          of repeating the full lookup process every time.
+        </p>
+      </article>
+
+      <article class="card concept-card">
+        <h2>9. Time To Live (TTL)</h2>
+        <p>
+          Time To Live, or TTL, controls how long a DNS record can be cached before it needs to
+          be refreshed. A shorter TTL allows DNS changes to update faster, while a longer TTL
+          can improve performance by reducing repeated lookups.
+        </p>
+      </article>
+
+      <article class="card concept-card">
+        <h2>10. DNSSEC</h2>
+        <p>
+          DNSSEC is a set of security extensions that helps verify DNS responses are authentic
+          and have not been altered in transit.
+        </p>
+      </article>
+
+      <article class="card concept-card">
+        <h2>11. DoH and DoT</h2>
+        <p>
+          DNS over HTTPS and DNS over TLS are privacy-focused protocols that encrypt DNS traffic
+          between the client and resolver.
+        </p>
       </article>
     </section>
   </main>
 
-  
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
-      <p>This is a class project for IT 3203. Visit the course website: <a href="https://ksuweb.github.io/IT3203/" target="_blank" rel="noopener noreferrer">IT 3203 Class Website</a>.</p>
+      <p>
+        This is a class project for IT 3203. Visit the course website:
+        <a href="https://ksuweb.github.io/IT3203/" target="_blank" rel="noopener noreferrer">
+          IT 3203 Class Website
+        </a>.
+      </p>
     </div>
   </footer>
 </body>

@@ -41,15 +41,51 @@
     </section>
 
     <section class="card">
-      <h2>Basic DNS Resolution Process</h2>
-      <ol>
-        <li>A client needs to resolve a domain name.</li>
-        <li>The client sends the request to a recursive resolver.</li>
-        <li>If the answer is not already cached, the resolver checks the root servers.</li>
-        <li>The resolver is directed to the correct top-level domain server.</li>
-        <li>The resolver then asks the authoritative server for the domain.</li>
-        <li>The IP address is returned to the client.</li>
-      </ol>
+     <h2>Step-by-Step DNS Lookup Process</h2>
+     <p>
+       When you type a website address like <strong>www.google.com</strong> into your browser, a series of steps occur behind the scenes to find the correct IP address. This process is known as a DNS lookup.
+     </p>
+   
+     <ol>
+       <li>
+         <strong>Browser Cache Check:</strong>
+         The browser first checks its cache to see if it already has the IP address stored from a recent visit.
+       </li>
+     
+       <li>
+         <strong>Operating System Cache Check:</strong>
+         If not found in the browser, the request is sent to the computer’s operating system, which also maintains a DNS cache.
+       </li>
+     
+       <li>
+         <strong>Query to Recursive Resolver:</strong>
+         If the IP address is not found locally, the request is sent to a recursive DNS resolver, typically provided by your Internet Service Provider (ISP).
+       </li>
+     
+       <li>
+         <strong>Root Server Query:</strong>
+         The resolver contacts a root DNS server, which directs it to the appropriate Top-Level Domain (TLD) server (such as .com, .org, or .net).
+       </li>
+     
+       <li>
+         <strong>TLD Server Query:</strong>
+         The TLD server responds with the address of the authoritative name server responsible for the specific domain.
+       </li>
+     
+       <li>
+         <strong>Authoritative Name Server Response:</strong>
+         The resolver queries the authoritative name server, which contains the actual DNS records, and retrieves the correct IP address for the domain.
+       </li>
+     
+       <li>
+         <strong>Return of IP Address:</strong>
+         The resolver sends the IP address back to your computer, and the browser uses it to request and load the website.
+       </li>
+     </ol>
+   
+     <p>
+       This entire process typically occurs in milliseconds. Caching at multiple levels improves performance, and the duration of caching is controlled by a value called Time To Live (TTL), which determines how long a DNS record is stored before it must be refreshed.
+     </p>
     </section>
 
     <!-- Additional DNS record types section for Milestone 2 -->

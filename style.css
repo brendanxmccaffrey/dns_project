@@ -177,6 +177,59 @@ th {
   .two-col {
     grid-template-columns: 1fr;
   }
+
+  .site-header {
+    padding: 2rem 0;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+}
+
+/* Responsive layout for phones */
+@media (max-width: 600px) {
+  .container {
+    width: 94%;
+  }
+
+  .nav-flex {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .main-nav a {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .quiz-form fieldset {
+    padding: 0.85rem;
+  }
+
+  .quiz-form label {
+    padding: 0.45rem 0;
+  }
+
+  .quiz-form input[type="text"] {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .button-row {
+    flex-direction: column;
+  }
+
+  .button-row button {
+    width: 100%;
+  }
 }
 
 /* Milestone 2 quiz styles */
@@ -266,4 +319,28 @@ th {
   border: 2px solid #c62828;
   background-color: #fdecea;
   color: #c62828;
+}
+.quiz-form fieldset {
+  margin-bottom: 1.5rem;
+}
+
+.quiz-form legend {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.quiz-form label {
+  display: block;
+  margin: 0.3rem 0;
+}
+
+button {
+  background-color: #0077cc;
+  color: white;
+  border-radius: 6px;
+  padding: 10px;
+}
+
+button:hover {
+  background-color: #005fa3;
 }
